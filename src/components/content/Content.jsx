@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
-// import Spinner from '../spinner/Spinner';
+import Spinner from "../spinner/Spinner";
 
 const Content = () => {
   // Consume the context
@@ -16,8 +16,8 @@ const Content = () => {
         </div>
       ) : (
         posts.map((post) => (
-          <div>
-            <p>{post.title}</p>
+          <div key={post.id}>
+            <p class="font-bold text-xl">{post.title}</p>
             <p>
               By <span>{post.author}</span> on <span>{[post.category]}</span>
             </p>
@@ -27,9 +27,9 @@ const Content = () => {
             <p>{post.content}</p>
 
             <div>
-              {post.tags.map ( (tag) => {
-                return <span></span>
-              } )}
+              {post.tags.map((tag, index) => {
+                return <span key={index}>{`# ${tag}`}</span>;
+              })}
             </div>
           </div>
         ))

@@ -8,21 +8,20 @@ export default function AppContextProvider({ children }) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  //data filling pending
-
   async function fetchBlogPosts(page = 1) {
     setLoading(true);
 
     try {
+      // Corrected order: Define url before making the fetch request
+      const url = `${baseUrl}?page=${page}`;
       const result = await fetch(url);
-      let url = `${baseUrl}?page=${page}`;
       const data = await result.json();
       console.log(data);
       setPage(data.page);
       setPosts(data.posts);
       setTotalPages(data.totalPages);
     } catch (error) {
-      console.log("Error is fetchhing data");
+      console.log("Error is fetching data");
       setPage(1);
       setPosts([]);
       setTotalPages(null);
@@ -30,9 +29,9 @@ export default function AppContextProvider({ children }) {
     setLoading(false);
   }
 
-  function handlePageChange(papa) {
-    setPage(page);
-    fetchBlogPosts(page);
+  function handlePageChange(newPage) {
+    setPage(newPage);
+    fetchBlogPosts(newPage);
   }
 
   const value = {
