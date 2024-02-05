@@ -7,7 +7,7 @@ const Content = () => {
   const { loading, posts } = useContext(AppContext);
 
   return (
-    <div>
+    <div class="w-11/12 max-w-[700px] py-8 flex flex-col gap-y-7 ">
       {loading ? (
         <Spinner />
       ) : posts.length === 0 ? (
@@ -16,19 +16,19 @@ const Content = () => {
         </div>
       ) : (
         posts.map((post) => (
-          <div key={post.id}>
-            <p class="font-bold text-xl">{post.title}</p>
-            <p>
-              By <span>{post.author}</span> on <span>{[post.category]}</span>
+          <div  key={post.id}>
+            <p class="font-bold text-lg mt-12">{post.title}</p>
+            <p class="text-sm">
+              By <span class="italic">{post.author}</span> on <span class="underline font-bold">{[post.category]}</span>
             </p>
 
-            <p>Posted on {post.date}</p>
+            <p class="text-sm mt-4">Posted on {post.date}</p>
 
-            <p>{post.content}</p>
+            <p class="text-lg mt-6">{post.content}</p>
 
-            <div>
+            <div class="flex gap-x-3">
               {post.tags.map((tag, index) => {
-                return <span key={index}>{`# ${tag}`}</span>;
+                return <span key={index} class="text-blue-600 underline font-bold text-sm mt-4">{`# ${tag}`}</span>;
               })}
             </div>
           </div>

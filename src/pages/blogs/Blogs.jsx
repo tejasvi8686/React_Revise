@@ -6,7 +6,7 @@ import Pagination from '../../components/pagination/Pagination'
 
 const Blogs = () => {
   return (
-    <div>
+    <div class="w-full h-full flex flex-col gap-y-1 justify-center items-center">
       <Header />
       <Content />
       <Pagination />
