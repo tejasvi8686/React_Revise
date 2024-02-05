@@ -16,8 +16,8 @@ const Content = () => {
         </div>
       ) : (
         posts.map((post) => (
-          <div  key={post.id}>
-            <p class="font-bold text-lg mt-12">{post.title}</p>
+          <div key={post.id}>
+            <p class="font-bold text-lg ">{post.title}</p>
             <p class="text-sm">
               By <span class="italic">{post.author}</span> on <span class="underline font-bold">{[post.category]}</span>
             </p>

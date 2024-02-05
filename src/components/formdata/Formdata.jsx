@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../navbar/Navbar";
+
 
 const Formdata = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +34,7 @@ const Formdata = () => {
 
   return (
     <>
-    <Navbar />
+
       <div class="bg-slate-500 mt-12">
         {/* <h1 class="text-center font-bold text-3xl mb-3 mt-16">Form Data</h1> */}
         <div className="w-full md:max-w-[50%] mx-auto shadow p-8  bg-slate-100 ">
