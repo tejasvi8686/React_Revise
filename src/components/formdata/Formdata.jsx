@@ -35,7 +35,7 @@ const Formdata = () => {
   return (
     <>
 
-      <div class="bg-slate-500 mt-12">
+      <div class="bg-slate-500 ">
         {/* <h1 class="text-center font-bold text-3xl mb-3 mt-16">Form Data</h1> */}
         <div className="w-full md:max-w-[50%] mx-auto shadow p-8  bg-slate-100 ">
           <form className="space-y-2 flex flex-col" onSubmit={submitHandler}>
